@@ -3,7 +3,7 @@
 class Rating < ApplicationRecord
   belongs_to :movie
   belongs_to :user
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
 
   validates :score, presence: true, numericality: true
   validates_inclusion_of :score, in: 1..10
