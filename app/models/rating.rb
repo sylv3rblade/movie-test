@@ -6,5 +6,5 @@ class Rating < ApplicationRecord
   has_many :comments, as: :commentable
 
   validates :score, presence: true, numericality: true
-  validates_inclusion_of :score, in: 0..10
+  validates_inclusion_of :score, in: 1..10
 end
